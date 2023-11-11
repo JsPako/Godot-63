@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://vw4h43kegmns"]
+
+[ext_resource type="Texture2D" uid="uid://umxcb5dmafna" path="res://Assets/Heart&ManaUi.png" id="1_uxf2j"]
+[ext_resource type="FontFile" uid="uid://bfr83c31iouf1" path="res://Assets/ThaleahFat.ttf" id="2_l373e"]
+[ext_resource type="Script" path="res://Health.gd" id="3_lnpsr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp0to"]
+atlas = ExtResource("1_uxf2j")
+region = Rect2(21, 12, 10, 10)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e5cnu"]
+font = ExtResource("2_l373e")
+font_size = 48
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lives" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 190.0
+offset_bottom = 55.0
+
+[node name="HealthImage" type="TextureRect" parent="Lives"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 45.0
+offset_bottom = 41.0
+texture = SubResource("AtlasTexture_wp0to")
+
+[node name="HealthLabel" type="Label" parent="Lives"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = -1.0
+offset_right = 179.0
+offset_bottom = 46.0
+label_settings = SubResource("LabelSettings_e5cnu")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_lnpsr")
