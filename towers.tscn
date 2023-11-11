@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtp0m0gavncua"]
+
+[ext_resource type="Script" path="res://towers.gd" id="1_vmlmg"]
+[ext_resource type="Texture2D" uid="uid://d227nw13kwsmk" path="res://Assets/towerDefense_tile249.png" id="2_0vmos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbi1f"]
+size = Vector2(41, 42)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mk1kw"]
+radius = 119.854
+
+[node name="BasicTower" type="StaticBody2D"]
+script = ExtResource("1_vmlmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.5, 1)
+shape = SubResource("RectangleShape2D_kbi1f")
+
+[node name="Area" type="Marker2D" parent="."]
+position = Vector2(28, 1)
+
+[node name="TowerDefenseTile249" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+rotation = 1.5708
+texture = ExtResource("2_0vmos")
+
+[node name="Tower" type="Area2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_mk1kw")
+
+[node name="Node" type="Node" parent="."]
+
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
