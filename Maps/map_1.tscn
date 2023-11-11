@@ -3,36 +3,36 @@
 [ext_resource type="TileSet" uid="uid://bnsenxa7w1ydr" path="res://Assets/tileset.tres" id="1_deq0m"]
 [ext_resource type="Texture2D" uid="uid://dy258d40iv5rh" path="res://Assets/taiga_ [resources].png" id="3_eluqo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d3i76"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qoed"]
 atlas = ExtResource("3_eluqo")
-region = Rect2(128, 128, 16, 16)
+region = Rect2(112, 120, 16, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_os2p8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2igs"]
 atlas = ExtResource("3_eluqo")
-region = Rect2(144, 128, 16, 16)
+region = Rect2(128, 120, 16, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4tn1h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w5y8"]
 atlas = ExtResource("3_eluqo")
-region = Rect2(160, 128, 16, 16)
+region = Rect2(144, 120, 16, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fvdj4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vstvi"]
 atlas = ExtResource("3_eluqo")
-region = Rect2(112, 128, 16, 16)
+region = Rect2(160, 120, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j60sv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d3i76")
+"texture": SubResource("AtlasTexture_5qoed")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_os2p8")
+"texture": SubResource("AtlasTexture_t2igs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4tn1h")
+"texture": SubResource("AtlasTexture_1w5y8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fvdj4")
+"texture": SubResource("AtlasTexture_vstvi")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -70,10 +70,11 @@ layer_0/z_index = 2
 layer_0/tile_data = PackedInt32Array(65522, 131079, 6, 65523, 196615, 6, 65524, 262151, 6, 65528, 131079, 6, 65529, 196615, 6, 65530, 196615, 6, 65531, 196615, 6, 65532, 196615, 6, 65533, 524295, 9, -14, 131079, 5, -13, 196615, 5, -12, 262151, 5, -8, 131079, 5, -7, 196615, 5, -6, 196615, 5, -5, 196615, 5, -4, 196615, 5, -3, 524295, 8, -65539, 524295, 7, -65538, 589831, 7, -2, 589831, 8, -65537, 589831, 7, -1, 589831, 8, -131072, 655367, 7, -65536, 655367, 8, 0, 655367, 9, -65535, 262151, 5, 1, 262151, 6, -196595, 196610, 1, -131059, 196610, 2, 65548, 196610, 1, 131084, 196610, 2, -65525, 196610, 1, 11, 196610, 2, 393229, 196610, 1, 458765, 196610, 2, 327691, 196610, 1, 393227, 196610, 2, 196621, 196610, 1, 262157, 196610, 2, -327670, 196610, 1, -262134, 196610, 2, -327667, 65538, 1, -262131, 65538, 2, -196597, 65538, 1, -131061, 65538, 2, 196619, 65538, 1, 262155, 65538, 2, 393226, 65538, 1, 458762, 65538, 2, -393212, 65538, 1, -327676, 65538, 2, -327679, 196610, 1, -262143, 196610, 2, -262149, 196610, 1, -196613, 196610, 2, -131085, 196610, 1, -65549, 196610, 2, -196617, 65538, 1, -131081, 65538, 2, -65544, 65538, 3, -327680, 65538, 3, 65546, 65538, 3, 13, 65538, 3, -262133, 65538, 3, 458759, 65538, 3, 196614, 131074, 3, 262150, 131074, 4, 196615, 196610, 3, 262151, 196610, 4, 327674, 262146, 3, 5, 262146, 4, 458739, 262146, 3, 262132, 262146, 4, 262149, 327682, 4, 196620, 589826, 1, -131062, 655362, 1, 393228, 655362, 2, -262142, 655362, 2, -65548, 589826, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Details Map"]
-position = Vector2(16, 24)
+position = Vector2(16, 20)
 sprite_frames = SubResource("SpriteFrames_j60sv")
 animation = &"new_animation"
-frame_progress = 0.308794
+autoplay = "new_animation"
+frame_progress = 0.453528
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_jq331")
