@@ -1,16 +1,16 @@
 [gd_resource type="TileSet" load_steps=17 format=3 uid="uid://bnsenxa7w1ydr"]
 
-[ext_resource type="Texture2D" uid="uid://dyfrdjysr2hkf" path="res://Assets/taiga_.png" id="1_rneoj"]
-[ext_resource type="Texture2D" uid="uid://cjcm2ehtk4es4" path="res://Assets/taigaPath_.png" id="2_kkxxw"]
-[ext_resource type="Texture2D" uid="uid://dy258d40iv5rh" path="res://Assets/taiga_ [resources].png" id="3_mx2ib"]
-[ext_resource type="Texture2D" uid="uid://d23ijjprbjx2e" path="res://Assets/taiga_ [fountain].png" id="4_txco3"]
-[ext_resource type="Texture2D" uid="uid://by435gqg3686" path="res://Assets/taiga_ [bridgeAnimatedTiles].png" id="5_xpvwk"]
-[ext_resource type="Texture2D" uid="uid://bnkowhiw2wtjg" path="res://Assets/taiga_ [bridgeHorizontal].png" id="6_fkr0j"]
-[ext_resource type="Texture2D" uid="uid://m4n6d084j6t1" path="res://Assets/taiga_ [bridgeVertical].png" id="7_15o4t"]
-[ext_resource type="Texture2D" uid="uid://c043xnqhmabnl" path="res://Assets/taiga_ [fencesAndWalls].png" id="8_drdsg"]
+[ext_resource type="Texture2D" uid="uid://dyfrdjysr2hkf" path="res://Assets/taiga/taiga_.png" id="1_3172j"]
+[ext_resource type="Texture2D" uid="uid://cjcm2ehtk4es4" path="res://Assets/taiga/taigaPath_.png" id="2_h58yx"]
+[ext_resource type="Texture2D" uid="uid://dy258d40iv5rh" path="res://Assets/taiga/taiga_ [resources].png" id="3_3yp01"]
+[ext_resource type="Texture2D" uid="uid://d23ijjprbjx2e" path="res://Assets/taiga/taiga_ [fountain].png" id="4_30xhv"]
+[ext_resource type="Texture2D" uid="uid://by435gqg3686" path="res://Assets/taiga/taiga_ [bridgeAnimatedTiles].png" id="5_au38f"]
+[ext_resource type="Texture2D" uid="uid://bnkowhiw2wtjg" path="res://Assets/taiga/taiga_ [bridgeHorizontal].png" id="6_y5a76"]
+[ext_resource type="Texture2D" uid="uid://m4n6d084j6t1" path="res://Assets/taiga/taiga_ [bridgeVertical].png" id="7_mh1dq"]
+[ext_resource type="Texture2D" uid="uid://c043xnqhmabnl" path="res://Assets/taiga/taiga_ [fencesAndWalls].png" id="8_jehqe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_impd2"]
-texture = ExtResource("1_rneoj")
+texture = ExtResource("1_3172j")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -128,7 +128,7 @@ texture = ExtResource("1_rneoj")
 19:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r125f"]
-texture = ExtResource("2_kkxxw")
+texture = ExtResource("2_h58yx")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -149,7 +149,7 @@ texture = ExtResource("2_kkxxw")
 6:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vn86m"]
-texture = ExtResource("3_mx2ib")
+texture = ExtResource("3_3yp01")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -209,7 +209,7 @@ texture = ExtResource("3_mx2ib")
 10:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8mrhv"]
-texture = ExtResource("4_txco3")
+texture = ExtResource("4_30xhv")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -292,7 +292,7 @@ texture = ExtResource("4_txco3")
 16:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_064dg"]
-texture = ExtResource("5_xpvwk")
+texture = ExtResource("5_au38f")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -355,7 +355,7 @@ texture = ExtResource("5_xpvwk")
 6:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jpi8r"]
-texture = ExtResource("6_fkr0j")
+texture = ExtResource("6_y5a76")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -404,7 +404,7 @@ texture = ExtResource("6_fkr0j")
 7:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6hjf"]
-texture = ExtResource("7_15o4t")
+texture = ExtResource("7_mh1dq")
 1:0/0 = 0
 3:0/0 = 0
 1:1/0 = 0
@@ -433,7 +433,7 @@ texture = ExtResource("7_15o4t")
 3:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cy4j6"]
-texture = ExtResource("8_drdsg")
+texture = ExtResource("8_jehqe")
 11:0/0 = 0
 12:0/0 = 0
 1:1/0 = 0

@@ -1,8 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://vw4h43kegmns"]
+[gd_scene load_steps=14 format=3 uid="uid://vw4h43kegmns"]
 
-[ext_resource type="Texture2D" uid="uid://umxcb5dmafna" path="res://Assets/Heart&ManaUi.png" id="1_uxf2j"]
-[ext_resource type="FontFile" uid="uid://bfr83c31iouf1" path="res://Assets/ThaleahFat.ttf" id="2_l373e"]
-[ext_resource type="Script" path="res://Health.gd" id="3_lnpsr"]
+[ext_resource type="Texture2D" uid="uid://umxcb5dmafna" path="res://Assets/ui/Heart&ManaUi.png" id="1_uxf2j"]
+[ext_resource type="FontFile" uid="uid://bfr83c31iouf1" path="res://Assets/ui/ThaleahFat.ttf" id="2_l373e"]
+[ext_resource type="Script" path="res://Scripts/GameUI/RoundLabel.gd" id="2_rvrvi"]
+[ext_resource type="Script" path="res://Scripts/GameUI/Health.gd" id="3_yjvsm"]
+[ext_resource type="Script" path="res://Scripts/GameUI/Coin.gd" id="4_gpakw"]
+[ext_resource type="Texture2D" uid="uid://c6qj5auco1bb3" path="res://Assets/ui/IconsShadow-32.png" id="6_w003l"]
+[ext_resource type="Script" path="res://Scripts/GameUI/NextBtn.gd" id="7_oksal"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2dj8a"]
+font = ExtResource("2_l373e")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_qhemi"]
+font = ExtResource("2_l373e")
+font_size = 32
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wp0to"]
 atlas = ExtResource("1_uxf2j")
@@ -12,6 +24,14 @@ region = Rect2(21, 12, 10, 10)
 font = ExtResource("2_l373e")
 font_size = 48
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6wcn"]
+atlas = ExtResource("1_uxf2j")
+region = Rect2(21, 38, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaj5d"]
+atlas = ExtResource("6_w003l")
+region = Rect2(191, 160, 32, 32)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -19,6 +39,47 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Round" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 55.0
+grow_horizontal = 0
+
+[node name="RoundText" type="Label" parent="Round"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -23.5
+offset_right = 101.0
+offset_bottom = 23.5
+grow_vertical = 2
+text = "Round:"
+label_settings = SubResource("LabelSettings_2dj8a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundLabel" type="Label" parent="Round"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -129.0
+offset_top = 5.0
+offset_right = -3.0
+offset_bottom = 38.0
+grow_horizontal = 0
+label_settings = SubResource("LabelSettings_qhemi")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_rvrvi")
 
 [node name="Lives" type="Panel" parent="."]
 layout_mode = 1
@@ -44,4 +105,55 @@ offset_bottom = 46.0
 label_settings = SubResource("LabelSettings_e5cnu")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("3_lnpsr")
+script = ExtResource("3_yjvsm")
+
+[node name="Coin" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 65.0
+offset_right = 190.0
+offset_bottom = 110.0
+
+[node name="CoinImage" type="TextureRect" parent="Coin"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 45.0
+offset_bottom = 43.0
+texture = SubResource("AtlasTexture_l6wcn")
+
+[node name="CoinLabel" type="Label" parent="Coin"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = -1.0
+offset_right = 179.0
+offset_bottom = 46.0
+label_settings = SubResource("LabelSettings_e5cnu")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_gpakw")
+
+[node name="Next Round Button" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -120.0
+offset_right = -48.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="NextBtn" type="Button" parent="Next Round Button"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(1.5, 1.5)
+icon = SubResource("AtlasTexture_iaj5d")
+icon_alignment = 1
+script = ExtResource("7_oksal")
+
+[connection signal="pressed" from="Next Round Button/NextBtn" to="Next Round Button/NextBtn" method="_on_pressed"]

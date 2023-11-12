@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy258d40iv5rh"
-path="res://.godot/imported/taiga_ [resources].png-180a16eb5c618923a236d66267c07dd8.ctex"
+uid="uid://umxcb5dmafna"
+path="res://.godot/imported/Heart&ManaUi.png-c22dcf1030273ffbe836455c61eaad68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/taiga_ [resources].png"
-dest_files=["res://.godot/imported/taiga_ [resources].png-180a16eb5c618923a236d66267c07dd8.ctex"]
+source_file="res://Assets/ui/Heart&ManaUi.png"
+dest_files=["res://.godot/imported/Heart&ManaUi.png-c22dcf1030273ffbe836455c61eaad68.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

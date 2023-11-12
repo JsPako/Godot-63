@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by435gqg3686"
-path="res://.godot/imported/taiga_ [bridgeAnimatedTiles].png-f1c52cbe377b580cd0b9000bd9742cbd.ctex"
+uid="uid://cjcm2ehtk4es4"
+path="res://.godot/imported/taigaPath_.png-847424a005f832a3aa69760e5ca4dbd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/taiga_ [bridgeAnimatedTiles].png"
-dest_files=["res://.godot/imported/taiga_ [bridgeAnimatedTiles].png-f1c52cbe377b580cd0b9000bd9742cbd.ctex"]
+source_file="res://Assets/taiga/taigaPath_.png"
+dest_files=["res://.godot/imported/taigaPath_.png-847424a005f832a3aa69760e5ca4dbd9.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

@@ -6,4 +6,4 @@ func _process(delta):
 	get_parent().set_progress(get_parent().get_progress() + speed * delta)
 	if get_parent().get_progress_ratio() > 0.99:
 		GameState.health = GameState.health - 1
-		queue_free()
+		get_parent().get_parent().queue_free()

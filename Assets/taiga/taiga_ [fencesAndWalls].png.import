@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyfrdjysr2hkf"
-path="res://.godot/imported/taiga_.png-675c5c30e10a3709f2f9e349c2745d45.ctex"
+uid="uid://c043xnqhmabnl"
+path="res://.godot/imported/taiga_ [fencesAndWalls].png-4f90427193ccc39f9b0f4384a3567e1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/taiga_.png"
-dest_files=["res://.godot/imported/taiga_.png-675c5c30e10a3709f2f9e349c2745d45.ctex"]
+source_file="res://Assets/taiga/taiga_ [fencesAndWalls].png"
+dest_files=["res://.godot/imported/taiga_ [fencesAndWalls].png-4f90427193ccc39f9b0f4384a3567e1b.ctex"]
 
 [params]
 

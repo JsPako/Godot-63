@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c043xnqhmabnl"
-path="res://.godot/imported/taiga_ [fencesAndWalls].png-8d339ef4e5e8a1b07afc02a606e98569.ctex"
+uid="uid://by435gqg3686"
+path="res://.godot/imported/taiga_ [bridgeAnimatedTiles].png-21eae050f9f149e11c639b6bca123729.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/taiga_ [fencesAndWalls].png"
-dest_files=["res://.godot/imported/taiga_ [fencesAndWalls].png-8d339ef4e5e8a1b07afc02a606e98569.ctex"]
+source_file="res://Assets/taiga/taiga_ [bridgeAnimatedTiles].png"
+dest_files=["res://.godot/imported/taiga_ [bridgeAnimatedTiles].png-21eae050f9f149e11c639b6bca123729.ctex"]
 
 [params]
 

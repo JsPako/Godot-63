@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://umxcb5dmafna"
-path="res://.godot/imported/Heart&ManaUi.png-82103a58b6e79248395131cb16bffeca.ctex"
+uid="uid://c6qj5auco1bb3"
+path="res://.godot/imported/IconsShadow-32.png-40d4b47b57e63b760bdc6e399dc2af0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Heart&ManaUi.png"
-dest_files=["res://.godot/imported/Heart&ManaUi.png-82103a58b6e79248395131cb16bffeca.ctex"]
+source_file="res://Assets/ui/IconsShadow-32.png"
+dest_files=["res://.godot/imported/IconsShadow-32.png-40d4b47b57e63b760bdc6e399dc2af0c.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
