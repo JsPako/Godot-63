@@ -15,6 +15,8 @@ func _process(delta):
 	
 	if count == 0 && GameState.waveOngoing == false:
 		GameState.waveFinished = true
+		
+	
 
 func waveStart():
 	GameState.waveOngoing = true
