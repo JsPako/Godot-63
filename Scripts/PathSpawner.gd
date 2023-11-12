@@ -1,9 +1,16 @@
 extends Node2D
 
-@onready var path = preload("res://Maps/Map1Stage.tscn")
+@onready var path = preload("res://Maps/Map 1/Map1Stage.tscn")
 
 func _ready():
+	GameState.stage = 0
+	GameState.waveOngoing = false
+	GameState.waveFinished = true
+	GameState.waveStart = false
+	GameState.gameOver = false
 	GameState.maxStage = 20
+	GameState.health = 100
+	GameState.coins = 20
 
 func _process(delta):
 	if GameState.waveStart == true && GameState.waveFinished == true:
@@ -22,6 +29,7 @@ func waveStart():
 	GameState.waveOngoing = true
 	GameState.waveFinished = false
 	var stage = GameState.stage
+
 	if stage == 1:
 		await spawnEnemy(path, 10, 1)
 	if stage == 2:

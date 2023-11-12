@@ -1,23 +1,29 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgx03ffx7cpyi"]
+[gd_scene load_steps=21 format=3 uid="uid://cgx03ffx7cpyi"]
 
-[ext_resource type="TileSet" uid="uid://bnsenxa7w1ydr" path="res://Assets/FullTileset.tres" id="1_7pk7y"]
-[ext_resource type="FontFile" uid="uid://bfr83c31iouf1" path="res://Assets/ui/ThaleahFat.ttf" id="2_m4rvx"]
-[ext_resource type="Texture2D" uid="uid://c6qj5auco1bb3" path="res://Assets/ui/IconsShadow-32.png" id="3_1wipr"]
+[ext_resource type="TileSet" uid="uid://bnsenxa7w1ydr" path="res://Assets/FullTileset.tres" id="1_t0eld"]
+[ext_resource type="Script" path="res://Scripts/MenuFollow.gd" id="2_44jkb"]
+[ext_resource type="FontFile" uid="uid://bfr83c31iouf1" path="res://Assets/ui/ThaleahFat.ttf" id="3_n5u07"]
+[ext_resource type="Script" path="res://Scripts/GameUI/SelectBtn.gd" id="4_24bcx"]
+[ext_resource type="Texture2D" uid="uid://c6qj5auco1bb3" path="res://Assets/ui/IconsShadow-32.png" id="4_i7lxw"]
+[ext_resource type="Script" path="res://Scripts/GameUI/ExitBtn.gd" id="5_fipkx"]
+[ext_resource type="Texture2D" uid="uid://tou5bqyo6k6t" path="res://Maps/Map 1/Map1Thumbnail.png" id="6_74f4l"]
+[ext_resource type="Script" path="res://Maps/Map 1/Map1Btn.gd" id="7_awrhh"]
+[ext_resource type="Script" path="res://Scripts/GameUI/ReturnMainBtn.gd" id="9_tyn6a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ls847"]
-font = ExtResource("2_m4rvx")
+font = ExtResource("3_n5u07")
 font_size = 128
 
 [sub_resource type="LabelSettings" id="LabelSettings_wbpr6"]
-font = ExtResource("2_m4rvx")
+font = ExtResource("3_n5u07")
 font_size = 64
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q2eix"]
-atlas = ExtResource("3_1wipr")
+atlas = ExtResource("4_i7lxw")
 region = Rect2(192, 65, 32, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_m5h35"]
-font = ExtResource("2_m4rvx")
+font = ExtResource("3_n5u07")
 font_size = 48
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1plgn"]
@@ -35,27 +41,42 @@ region = Rect2(224, 64, 32, 32)
 atlas = SubResource("CompressedTexture2D_1plgn")
 region = Rect2(257, 128, 32, 32)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_8hn3h"]
+font = ExtResource("3_n5u07")
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sopg3"]
+atlas = ExtResource("4_i7lxw")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb4ea"]
+atlas = ExtResource("4_i7lxw")
+region = Rect2(288, 160, 32, 32)
+
+[node name="Main Menu" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2(3, 3)
-tile_set = ExtResource("1_7pk7y")
+tile_set = ExtResource("1_t0eld")
 format = 2
 layer_0/tile_data = PackedInt32Array(-393229, 131072, 2, -393228, 589824, 1, -393227, 131072, 2, -393226, 131072, 2, -393225, 720896, 3, -393224, 131072, 2, -393223, 262156, 3, -393222, 262156, 3, -393221, 262156, 3, -393220, 262156, 3, -393219, 262156, 3, -393218, 262156, 3, -393217, 65548, 2, -458751, 786469, 9, -458750, 131109, 6, -458749, 131109, 9, -458748, 131109, 6, -458747, 720933, 2, -458746, 786469, 6, -458745, 131100, 6, -458744, 655388, 1, -458743, 131100, 6, -458742, 655388, 1, -458741, 524316, 2, -458740, 655388, 4, -524276, 720924, 4, -524277, 524316, 2, -524278, 458780, 6, -524279, 131100, 6, -524280, 786460, 6, -524281, 786460, 6, -524282, 720933, 3, -524283, 655397, 3, -524284, 131109, 6, -524285, 524325, 2, -524286, 131109, 6, -524287, 131109, 6, -524288, 131109, 6, -458753, 65548, 2, -458754, 262156, 3, -458755, 262156, 3, -458756, 262156, 3, -458757, 262156, 3, -458758, 262156, 3, -458759, 262156, 3, -458760, 131072, 2, -458761, 131072, 2, -458762, 131072, 2, -458763, 131072, 3, -458764, 720896, 2, -458765, 131072, 6, -458766, 131072, 6, -393230, 131072, 2, -327694, 131072, 3, -262158, 131072, 2, -196622, 524288, 2, -131086, 458752, 6, -131085, 720896, 4, -65549, 131072, 2, -13, 131072, 2, 65523, 720896, 2, 131059, 131072, 6, 196594, 458752, 6, 262130, 131072, 7, 327666, 262144, 7, 393202, 262144, 7, 458738, 262144, 7, 524274, 262144, 7, 131058, 131072, 3, 65522, 131072, 3, -14, 655360, 1, -65550, 786432, 6, -196621, 589824, 1, -262157, 655360, 4, -262156, 131072, 2, -327692, 655360, 1, -196620, 131072, 2, -327693, 655360, 3, -327691, 131072, 2, -327690, 131072, 2, -327689, 655360, 4, -327688, 131072, 2, -327687, 131084, 1, -327686, 196620, 1, -327685, 262156, 3, -262148, 131084, 1, -262147, 131084, 1, -262146, 327692, 2, -262145, 131080, 2, -327680, 131109, 2, -327679, 131109, 6, -327678, 786469, 9, -327677, 131109, 6, -327676, 655397, 3, -327675, 131109, 9, -327674, 131109, 6, -327673, 131100, 6, -327672, 655388, 2, -393207, 131100, 6, -393206, 131100, 6, -393205, 131100, 3, -393204, 720924, 3, -458739, 131100, 6, -524275, 131100, 6, -393203, 131100, 6, -327667, 131100, 6, -262131, 131100, 6, -196595, 131100, 6, -131060, 131100, 6, -65524, 131100, 6, 12, 589852, 1, 65548, 524316, 2, 131085, 131100, 6, 196621, 131100, 6, 262157, 589852, 1, 327693, 131100, 2, 393229, 655388, 3, 458765, 524316, 2, 458764, 131100, 6, 458763, 131100, 6, 458762, 524316, 2, 458761, 720924, 1, 458760, 131100, 6, 458759, 131100, 6, 458758, 262181, 10, 458757, 262181, 10, 458756, 262181, 10, 458755, 262181, 10, 458754, 262181, 10, 458753, 196645, 9, 458752, 655397, 4, 524287, 131080, 2, 524286, 131080, 2, 524285, 720904, 1, 524284, 131080, 2, 524283, 131080, 2, 524282, 131080, 3, 524281, 131080, 2, 524280, 458752, 6, 524279, 131072, 2, 524278, 65536, 6, 524277, 262144, 7, 524276, 262144, 7, 524275, 262144, 7, 458739, 262144, 7, 393203, 262144, 7, 327667, 262144, 7, 262131, 131072, 7, 196595, 589824, 1, -131084, 131072, 2, -196619, 720896, 2, -196618, 1114112, 6, -196617, 655360, 3, -196616, 131072, 2, -196615, 131080, 2, -196614, 131080, 2, -262150, 262156, 2, -262149, 131084, 1, -262151, 131080, 2, -262152, 131072, 2, -262153, 655360, 1, -262154, 131072, 6, -262155, 131072, 3, -196613, 131080, 2, -196612, 131080, 2, -196611, 131080, 2, -196610, 131080, 2, -393211, 131109, 6, -393212, 131109, 6, -393213, 131109, 2, -393214, 655397, 4, -393215, 131109, 6, -393216, 720933, 3, -327681, 327692, 2, -327682, 65548, 1, -327683, 262156, 3, -327684, 262156, 3, -393210, 131109, 6, -393209, 131100, 6, -393208, 655388, 4, -327669, 720924, 3, -262133, 524316, 2, -196597, 589852, 2, -196596, 131100, 6, -65523, 131100, 6, 13, 131100, 6, 65549, 131100, 6, -131059, 131100, 6, -262132, 131100, 6, -327668, 131100, 6, -327670, 720924, 1, -327671, 131100, 6, -262142, 1114149, 6, -262143, 720933, 4, -262144, 1114149, 9, -196609, 655368, 1, -131074, 131080, 2, -131075, 655368, 4, -131076, 589832, 1, -131077, 720904, 1, -131078, 786440, 6, -131079, 720904, 1, -131080, 131072, 2, -131081, 720896, 2, -131082, 131072, 3, -131083, 655360, 3, -65547, 589824, 1, -65548, 131072, 2, -65546, 131072, 2, -65545, 589824, 2, -9, 589824, 1, -8, 131072, 2, -7, 131080, 2, -6, 655368, 2, -5, 131080, 2, -4, 131080, 6, -3, 589832, 1, -2, 131080, 2, -65538, 1114120, 6, -65537, 131080, 2, -131072, 786469, 9, -131071, 131109, 2, -131070, 131109, 6, -131069, 720933, 1, -131068, 458789, 6, -131067, 720933, 1, -131066, 131109, 6, -131065, 131100, 6, -196600, 131100, 2, -196599, 131100, 6, -196598, 131100, 6, -262134, 524316, 2, -262135, 131100, 6, -262138, 131109, 6, -262139, 589861, 1, -262140, 720933, 1, -262141, 131109, 6, -65544, 131072, 2, -65543, 524296, 1, -65542, 1114120, 6, -65541, 131080, 2, -65540, 655368, 2, -65539, 131080, 6, -196603, 720933, 2, -196602, 131109, 6, -196601, 131100, 6, -262136, 655388, 3, -262137, 131100, 6, -196606, 131109, 6, -196607, 1114149, 9, -196608, 131109, 3, -131073, 720904, 2, -10, 131072, 3, -11, 720896, 4, 65525, 131072, 3, 65524, 131072, 2, 131060, 131072, 3, 262132, 327680, 5, 327668, 65536, 6, 393204, 65536, 7, 393205, 131072, 7, 327669, 131072, 2, 262133, 131072, 3, 196597, 131072, 3, 131061, 131072, 2, -12, 131072, 3, 458741, 262144, 7, 458740, 262144, 7, 458742, 65536, 6, 458743, 131072, 2, 458744, 655360, 2, 458745, 131080, 2, 458746, 655368, 4, 458747, 720904, 1, 458748, 131080, 2, 458749, 458760, 6, 458750, 655368, 3, 458751, 131080, 2, 393216, 720933, 2, 393217, 196645, 9, 393218, 262181, 10, 393219, 262181, 10, 393220, 262181, 10, 393221, 262181, 10, 393222, 262181, 10, 393223, 720924, 4, 393224, 720924, 4, 393225, 458780, 6, 393226, 131100, 6, 393227, 655388, 3, 393228, 131100, 6, 327692, 458780, 6, 262156, 655388, 1, 196620, 786460, 6, 196619, 131100, 6, 131083, 131100, 6, 131082, 655388, 4, 131081, 458780, 6, 131080, 524316, 2, 196615, 131100, 6, 196614, 655397, 8, 196613, 131109, 10, 196612, 131109, 10, 196611, 589861, 8, 262146, 131109, 10, 262145, 262181, 8, 262144, 655397, 3, 327679, 131080, 2, 327678, 131080, 2, 327677, 131080, 2, 327676, 720904, 1, 393212, 131080, 2, 393211, 131080, 6, 393210, 131080, 2, 393209, 131080, 6, 393208, 655360, 3, 327671, 524288, 1, 327670, 131072, 2, 196598, 131072, 3, 131062, 131072, 3, 131063, 655360, 4, 131064, 131072, 2, 131065, 131080, 2, 196602, 786440, 6, 196603, 131080, 2, 196604, 720904, 1, 196605, 131080, 2, 196606, 458760, 6, 196607, 131080, 2, 131072, 131109, 6, 196609, 524325, 2, 196610, 131109, 6, 131077, 131109, 6, 131078, 131109, 6, 131079, 131100, 6, 65545, 131100, 6, 9, 131100, 6, 8, 786460, 6, 7, 131100, 6, 6, 589861, 2, 5, 786469, 9, 4, 720933, 2, 3, 131109, 6, 2, 131109, 6, 1, 589861, 2, 0, 655397, 2, 65535, 131080, 2, 65534, 131080, 2, 65533, 655368, 2, 65532, 131080, 2, 65531, 131080, 2, 65530, 524296, 2, 65529, 131080, 2, 65528, 131072, 2, 65527, 131072, 2, 65526, 131072, 2, 131068, 131080, 2, 131069, 524296, 1, 131070, 1114120, 6, 131071, 131080, 2, 65536, 786469, 9, 65537, 720933, 3, 65538, 131109, 6, 65539, 131109, 6, 65540, 720933, 4, -65527, 131100, 6, -131063, 131100, 6, -131064, 786460, 6, -1, 131080, 2, -65536, 458789, 9, -65535, 131109, 6, -196604, 1114149, 6, -196605, 131109, 6, -65534, 720933, 4, -65530, 131109, 6, -65529, 131100, 6, -65528, 720924, 1, -65526, 720924, 4, -65531, 131109, 9, -65532, 131109, 6, -65533, 131109, 3, -131062, 131100, 6, -131061, 720924, 2, -65525, 131100, 3, 10, 524316, 2, 65546, 458780, 6, 11, 720924, 1, 65547, 524316, 1, 131084, 524316, 1, 262155, 131100, 6, 327691, 655388, 3, 327690, 655388, 4, 327689, 720924, 1, 327688, 458780, 6, 327687, 131100, 6, 327686, 262181, 10, 327685, 262181, 10, 327684, 262181, 10, 327683, 262181, 10, 327682, 262181, 10, 327681, 196645, 9, 327680, 720933, 2, 393215, 131080, 2, 393214, 655368, 1, 393213, 131080, 2, 393207, 131072, 2, 393206, 327680, 5, 262135, 655360, 2, 262134, 655360, 1, 262136, 131072, 2, 196600, 131072, 2, 196599, 786432, 6, 327672, 131072, 2, 327673, 589832, 1, 262137, 131080, 2, 262138, 655368, 1, 196601, 131080, 2, 327674, 131080, 2, 262139, 131080, 2, 131067, 131080, 2, 327675, 720904, 3, 262140, 655368, 1, 131066, 655368, 1, 131076, 131109, 6, 131075, 131109, 6, 131074, 131109, 6, 131073, 131109, 6, 262142, 524296, 1, 262141, 131080, 2, 65541, 720933, 3, 65542, 131109, 6, 65543, 131100, 6, 65544, 524316, 1, 262147, 524325, 10, 262148, 262181, 10, 262149, 262181, 10, 262150, 65573, 10, 262151, 131100, 6, 262152, 131100, 2, 262153, 524316, 2, 262154, 131100, 6, 196608, 131109, 6, 262143, 131080, 2, 196616, 131100, 6, 196617, 720924, 3, 196618, 131100, 6, 196596, 131072, 2, -458752, 655397, 4)
 
 [node name="Path" type="TileMap" parent="."]
 scale = Vector2(3, 3)
-tile_set = ExtResource("1_7pk7y")
+tile_set = ExtResource("1_t0eld")
 format = 2
 layer_0/tile_data = PackedInt32Array(-131084, 131073, 1, -131083, 131073, 1, -131082, 196609, 1, -131086, 131073, 1, -131085, 131073, 1, -196622, 131073, 3, -196621, 131073, 3, -196620, 131073, 3, -196619, 131073, 3, -196618, 131073, 3, -196617, 327681, 1, -65546, 196609, 2, -10, 196609, 2, 65526, 196609, 2, 131063, 131073, 1, 131064, 131073, 1, 131062, 262145, 2, 65528, 131073, 3, 65527, 65537, 3, -9, 65537, 2, -65545, 65537, 2, -131081, 65537, 2, 65529, 131081, 3, 65530, 196617, 3, -6, 196617, 2, -65542, 196617, 2, -131078, 262153, 1, -131077, 131081, 3, -131076, 131081, 3, -131075, 327689, 1, 131065, 131081, 1, 65531, 65545, 2, -5, 65545, 2, -65541, 65545, 1, 131067, 327689, 2, 131066, 131081, 1, -65540, 196617, 1, -4, 196617, 2, 65532, 196617, 2, 131068, 196617, 2, -65539, 65545, 2, -3, 65545, 2, 65533, 65545, 2, 131069, 65545, 3, 65536, 327717, 4, 0, 327717, 3, -65536, 327717, 3, -131072, 327717, 3, -196608, 327717, 3, -262144, 327717, 3, -327680, 327717, 3, -393216, 393253, 1, -393215, 131109, 4, -393214, 131109, 4, -393213, 131109, 4, -393212, 131109, 4, -393211, 131109, 4, -393210, 131109, 4, -327679, 65573, 1, -327678, 131109, 1, -327677, 131109, 1, -327676, 131109, 1, -327675, 131109, 1, -327674, 131109, 1, -262143, 65573, 2, -196607, 65573, 2, -131071, 65573, 2, -65535, 65573, 2, 1, 65573, 2, 65537, 65573, 2, 196604, 262153, 2, 196605, 131081, 1, 196606, 131081, 1, 196607, 131081, 1, 131072, 131109, 1, 131073, 458789, 2, 131070, 131081, 3, 131071, 131081, 3, -393208, 131101, 3, -393209, 131101, 3, -393207, 131101, 3, -393206, 131101, 3, -393205, 327709, 1, -262134, 196637, 2, -196598, 196637, 2, -131062, 196637, 2, -65526, 196637, 2, 10, 196637, 2, 65546, 196637, 2, 131082, 196637, 2, 196618, 196637, 2, 262154, 196637, 2, 327690, 196637, 2, 393226, 196637, 2, 458762, 196637, 2, -262133, 65565, 2, -196597, 65565, 2, -131061, 65565, 2, -65525, 65565, 2, 11, 65565, 2, 65547, 65565, 2, 131083, 65565, 2, 196619, 65565, 2, 262155, 65565, 2, 327691, 65565, 2, 393227, 65565, 2, 458763, 65565, 2, -327670, 196637, 1, -327669, 65565, 2, -327673, 131101, 1, -327672, 131101, 1, -327671, 131101, 1)
 
 [node name="Details" type="TileMap" parent="."]
 scale = Vector2(3, 3)
-tile_set = ExtResource("1_7pk7y")
+tile_set = ExtResource("1_t0eld")
 format = 2
 layer_0/tile_data = PackedInt32Array(131059, 65538, 3, 262136, 65538, 1, 327672, 65538, 2, 458743, 65538, 3, 327669, 262146, 3, 196596, 589826, 1, -8, 589826, 1, -12, 327682, 4, -65547, 65543, 6, -131083, 65543, 5, -458764, 196610, 2, -524300, 196610, 1, -327693, 65538, 2, -393229, 65538, 1, -262157, 131079, 7, -327692, 589826, 2, -65549, 65538, 4, -262152, 196610, 2, -327688, 196610, 1, -393225, 524290, 1, -327690, 65538, 3, -393224, 262146, 4, 65522, 196610, 2, -14, 196610, 1, -393230, 196610, 2, -458766, 196610, 1, 458744, 196610, 1, 524280, 196610, 2, 196600, 196610, 2, 131064, 196610, 1, 65534, 524298, 6, -2, 524298, 5, -1, 589834, 5, 65535, 589834, 6, -262145, 655370, 6, -196614, 655370, 5, 262138, 131082, 1, 327674, 131082, 2, -262147, 131082, 1, -196611, 131082, 2, 524284, 131082, 2, 327679, 131082, 2, 458745, 131082, 2, 393209, 131082, 1, 458748, 131082, 1, 262143, 131082, 1, 458750, 524298, 1, 196601, 458762, 1, 262141, 458762, 2, 458746, 458762, 2, -65543, 524298, 1, -131073, 524298, 1, -196604, 65580, 2, -131068, 65580, 2, 4, 65580, 2, 65540, 65580, 2, 131076, 65580, 3, -65531, 196652, 1, -65530, 196652, 1, -262140, 65580, 2, -327676, 65580, 2, -393212, 65580, 2, -458748, 65580, 2, -524284, 65580, 1, -65532, 262188, 3, -262138, 393260, 3, -327674, 393260, 2, 131074, 393260, 3, 65538, 393260, 2, -196606, 393254, 3, 3, 262182, 3, 131078, 393254, 4, 327680, 327718, 4, 196610, 262182, 4, -131066, 393254, 4, -131070, 458790, 4, -262139, 524326, 3, -458752, 524326, 4, -524282, 65574, 5, -458746, 65574, 6, -524286, 131110, 1, -458750, 131110, 2, 5, 131110, 1, 65541, 131110, 2, 393216, 65574, 1, 458752, 65574, 2, 458765, 393251, 2, -524280, 393251, 2, 327687, 393251, 2, -65527, 65571, 1, 9, 65571, 2, -458739, 196643, 2, 327693, 196643, 2, 262157, 196643, 1, -524275, 196643, 1, -327672, 131107, 1, -262136, 131107, 2, -65523, 131107, 2, -131059, 131107, 1, 262153, 65571, 1, 327689, 65571, 2, 131080, 131107, 2, 65544, 131107, 1, 196620, 196643, 2, 131084, 196643, 1, 131081, 262179, 3, -196601, 262179, 3, -393203, 262179, 3, -458743, 262179, 3, 327692, 262179, 4, -196596, 262179, 4, -327668, 65571, 1, -262132, 65571, 2, 7, 393251, 2, 65548, 458785, 3, 12, 589857, 4, 11, 524321, 4, -65524, 589857, 3, -65525, 524321, 3, -196599, 262177, 4, 393225, 262177, 4)
+
+[node name="Main Menu Enemies" type="Node2D" parent="."]
+script = ExtResource("2_44jkb")
 
 [node name="Menu Background" type="Panel" parent="."]
 anchors_preset = 8
@@ -114,6 +135,7 @@ offset_right = 220.0
 offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_24bcx")
 
 [node name="SelectImage" type="TextureRect" parent="Menu Background/SelectBtn"]
 layout_mode = 1
@@ -249,6 +271,7 @@ offset_right = 611.0
 offset_bottom = 342.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_fipkx")
 
 [node name="ExitImage" type="TextureRect" parent="Menu Background/ExitBtn"]
 layout_mode = 1
@@ -265,3 +288,283 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 texture = SubResource("AtlasTexture_op4p8")
+
+[node name="Map Select" type="Panel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -364.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Map 1" type="Panel" parent="Map Select"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 25.0
+offset_right = 420.0
+offset_bottom = 300.0
+
+[node name="Thumbnail" type="TextureRect" parent="Map Select/Map 1"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1288.0
+offset_bottom = 728.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_74f4l")
+
+[node name="Name" type="Label" parent="Map Select/Map 1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 228.0
+offset_right = 271.0
+offset_bottom = 268.0
+text = " Grassy Fields"
+label_settings = SubResource("LabelSettings_8hn3h")
+vertical_alignment = 1
+
+[node name="Star" type="TextureRect" parent="Map Select/Map 1"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 230.0
+offset_right = 392.0
+offset_bottom = 268.0
+texture = SubResource("AtlasTexture_sopg3")
+
+[node name="Map1Btn" type="Button" parent="Map Select/Map 1"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 275.0
+flat = true
+script = ExtResource("7_awrhh")
+
+[node name="Map 2" type="Panel" parent="Map Select"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 25.0
+offset_right = 840.0
+offset_bottom = 300.0
+
+[node name="Thumbnail" type="TextureRect" parent="Map Select/Map 2"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1288.0
+offset_bottom = 728.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_74f4l")
+
+[node name="Name" type="Label" parent="Map Select/Map 2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 228.0
+offset_right = 271.0
+offset_bottom = 268.0
+text = " Grassy Fields"
+label_settings = SubResource("LabelSettings_8hn3h")
+vertical_alignment = 1
+
+[node name="Star" type="TextureRect" parent="Map Select/Map 2"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 230.0
+offset_right = 392.0
+offset_bottom = 268.0
+texture = SubResource("AtlasTexture_sopg3")
+
+[node name="Map1Btn" type="Button" parent="Map Select/Map 2"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 275.0
+flat = true
+script = ExtResource("7_awrhh")
+
+[node name="Map 3" type="Panel" parent="Map Select"]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 25.0
+offset_right = 1260.0
+offset_bottom = 300.0
+
+[node name="Thumbnail" type="TextureRect" parent="Map Select/Map 3"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1288.0
+offset_bottom = 728.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_74f4l")
+
+[node name="Name" type="Label" parent="Map Select/Map 3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 228.0
+offset_right = 271.0
+offset_bottom = 268.0
+text = " Grassy Fields"
+label_settings = SubResource("LabelSettings_8hn3h")
+vertical_alignment = 1
+
+[node name="Star" type="TextureRect" parent="Map Select/Map 3"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 230.0
+offset_right = 392.0
+offset_bottom = 268.0
+texture = SubResource("AtlasTexture_sopg3")
+
+[node name="Map1Btn" type="Button" parent="Map Select/Map 3"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 275.0
+flat = true
+script = ExtResource("7_awrhh")
+
+[node name="Map 4" type="Panel" parent="Map Select"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 325.0
+offset_right = 420.0
+offset_bottom = 600.0
+
+[node name="Thumbnail" type="TextureRect" parent="Map Select/Map 4"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1288.0
+offset_bottom = 728.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_74f4l")
+
+[node name="Name" type="Label" parent="Map Select/Map 4"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 228.0
+offset_right = 271.0
+offset_bottom = 268.0
+text = " Grassy Fields"
+label_settings = SubResource("LabelSettings_8hn3h")
+vertical_alignment = 1
+
+[node name="Star" type="TextureRect" parent="Map Select/Map 4"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 230.0
+offset_right = 392.0
+offset_bottom = 268.0
+texture = SubResource("AtlasTexture_sopg3")
+
+[node name="Map1Btn" type="Button" parent="Map Select/Map 4"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 275.0
+flat = true
+script = ExtResource("7_awrhh")
+
+[node name="Map 5" type="Panel" parent="Map Select"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 325.0
+offset_right = 840.0
+offset_bottom = 600.0
+
+[node name="Thumbnail" type="TextureRect" parent="Map Select/Map 5"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1288.0
+offset_bottom = 728.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_74f4l")
+
+[node name="Name" type="Label" parent="Map Select/Map 5"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 228.0
+offset_right = 271.0
+offset_bottom = 268.0
+text = " Grassy Fields"
+label_settings = SubResource("LabelSettings_8hn3h")
+vertical_alignment = 1
+
+[node name="Star" type="TextureRect" parent="Map Select/Map 5"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 230.0
+offset_right = 392.0
+offset_bottom = 268.0
+texture = SubResource("AtlasTexture_sopg3")
+
+[node name="Map1Btn" type="Button" parent="Map Select/Map 5"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 275.0
+flat = true
+script = ExtResource("7_awrhh")
+
+[node name="Map 6" type="Panel" parent="Map Select"]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 325.0
+offset_right = 1260.0
+offset_bottom = 600.0
+
+[node name="Thumbnail" type="TextureRect" parent="Map Select/Map 6"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1288.0
+offset_bottom = 728.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_74f4l")
+
+[node name="Name" type="Label" parent="Map Select/Map 6"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 228.0
+offset_right = 271.0
+offset_bottom = 268.0
+text = " Grassy Fields"
+label_settings = SubResource("LabelSettings_8hn3h")
+vertical_alignment = 1
+
+[node name="Star" type="TextureRect" parent="Map Select/Map 6"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 230.0
+offset_right = 392.0
+offset_bottom = 268.0
+texture = SubResource("AtlasTexture_sopg3")
+
+[node name="Map1Btn" type="Button" parent="Map Select/Map 6"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 275.0
+flat = true
+script = ExtResource("7_awrhh")
+
+[node name="ReturnMainBtn" type="Button" parent="Map Select"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 624.0
+offset_right = 640.0
+offset_bottom = 664.0
+scale = Vector2(2, 2)
+icon = SubResource("AtlasTexture_wb4ea")
+script = ExtResource("9_tyn6a")
+
+[connection signal="pressed" from="Menu Background/SelectBtn" to="Menu Background/SelectBtn" method="_on_pressed"]
+[connection signal="pressed" from="Menu Background/ExitBtn" to="Menu Background/ExitBtn" method="_on_pressed"]
+[connection signal="pressed" from="Map Select/Map 1/Map1Btn" to="Map Select/Map 1/Map1Btn" method="_on_pressed"]
+[connection signal="pressed" from="Map Select/Map 2/Map1Btn" to="Map Select/Map 2/Map1Btn" method="_on_pressed"]
+[connection signal="pressed" from="Map Select/Map 3/Map1Btn" to="Map Select/Map 3/Map1Btn" method="_on_pressed"]
+[connection signal="pressed" from="Map Select/Map 4/Map1Btn" to="Map Select/Map 4/Map1Btn" method="_on_pressed"]
+[connection signal="pressed" from="Map Select/Map 5/Map1Btn" to="Map Select/Map 5/Map1Btn" method="_on_pressed"]
+[connection signal="pressed" from="Map Select/Map 6/Map1Btn" to="Map Select/Map 6/Map1Btn" method="_on_pressed"]
+[connection signal="pressed" from="Map Select/ReturnMainBtn" to="Map Select/ReturnMainBtn" method="_on_pressed"]

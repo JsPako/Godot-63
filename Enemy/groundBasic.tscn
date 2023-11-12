@@ -7,6 +7,7 @@
 radius = 88.0909
 
 [node name="groundBasic" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_ky5u3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

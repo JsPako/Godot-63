@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4soc80s0x7il"]
 
-[ext_resource type="PackedScene" uid="uid://cyhyso0u28uup" path="res://temp_enemy.tscn" id="1_s84el"]
+[ext_resource type="PackedScene" uid="uid://crfd5nm44scuh" path="res://Enemy/groundBasic.tscn" id="1_e6qi8"]
 
 [sub_resource type="Curve2D" id="Curve2D_jq331"]
 _data = {
@@ -15,4 +15,4 @@ curve = SubResource("Curve2D_jq331")
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-690, 96)
 
-[node name="TempEnemy" parent="PathFollow2D" instance=ExtResource("1_s84el")]
+[node name="groundBasic" parent="PathFollow2D" instance=ExtResource("1_e6qi8")]

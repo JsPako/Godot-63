@@ -7,6 +7,7 @@
 radius = 88.0909
 
 [node name="groundSpeedy" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_5r01w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
