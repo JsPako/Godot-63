@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://hox88el24jpg"]
+
+[ext_resource type="Script" path="res://Enemy/groundSpeedy.gd" id="1_5r01w"]
+[ext_resource type="Texture2D" uid="uid://bmw0grbaylyji" path="res://icon.svg" id="1_dqgt7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fym4x"]
+radius = 88.0909
+
+[node name="groundSpeedy" type="CharacterBody2D"]
+script = ExtResource("1_5r01w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dqgt7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fym4x")
