@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://vw4h43kegmns"]
+[gd_scene load_steps=25 format=3 uid="uid://vw4h43kegmns"]
 
 [ext_resource type="Texture2D" uid="uid://umxcb5dmafna" path="res://Assets/ui/Heart&ManaUi.png" id="1_uxf2j"]
 [ext_resource type="FontFile" uid="uid://bfr83c31iouf1" path="res://Assets/ui/ThaleahFat.ttf" id="2_l373e"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/GameUI/SettingsBtn.gd" id="8_meheu"]
 [ext_resource type="Script" path="res://Scripts/GameUI/ReturnBtn.gd" id="9_20pwo"]
 [ext_resource type="Script" path="res://Scripts/GameUI/AudioPercent.gd" id="9_bhpuy"]
+[ext_resource type="Script" path="res://Scripts/GameUI/RestartBtn.gd" id="9_y3pcd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2dj8a"]
 font = ExtResource("2_l373e")
@@ -248,6 +249,7 @@ grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 icon = SubResource("AtlasTexture_6mvef")
 icon_alignment = 1
+script = ExtResource("9_y3pcd")
 
 [node name="HomeBtn" type="Button" parent="Settings Button/Game Paused Background/Game Paused Menu"]
 layout_mode = 1
