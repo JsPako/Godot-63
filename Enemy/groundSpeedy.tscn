@@ -1,17 +1,84 @@
-[gd_scene load_steps=4 format=3 uid="uid://hox88el24jpg"]
+[gd_scene load_steps=12 format=3 uid="uid://hox88el24jpg"]
 
 [ext_resource type="Script" path="res://Enemy/groundSpeedy.gd" id="1_5r01w"]
-[ext_resource type="Texture2D" uid="uid://bmw0grbaylyji" path="res://icon.svg" id="1_dqgt7"]
+[ext_resource type="Texture2D" uid="uid://86uclr812obx" path="res://Assets/enemies/MiniBunny.png" id="2_ai1hv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fym4x"]
-radius = 88.0909
+radius = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr8ha"]
+atlas = ExtResource("2_ai1hv")
+region = Rect2(0, 116, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlp72"]
+atlas = ExtResource("2_ai1hv")
+region = Rect2(32, 116, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgi3e"]
+atlas = ExtResource("2_ai1hv")
+region = Rect2(64, 116, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1f30"]
+atlas = ExtResource("2_ai1hv")
+region = Rect2(0, 52, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prvgu"]
+atlas = ExtResource("2_ai1hv")
+region = Rect2(32, 52, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txs3s"]
+atlas = ExtResource("2_ai1hv")
+region = Rect2(64, 52, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufxex"]
+atlas = ExtResource("2_ai1hv")
+region = Rect2(96, 52, 32, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rl3qw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr8ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlp72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgi3e")
+}],
+"loop": false,
+"name": &"death",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1f30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prvgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txs3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufxex")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="groundSpeedy" type="CharacterBody2D"]
-scale = Vector2(0.3, 0.3)
 script = ExtResource("1_5r01w")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_dqgt7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fym4x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_rl3qw")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

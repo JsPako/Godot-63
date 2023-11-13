@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 300
+var speed = 180
 var damage = 5
 var health = 22.5
 var airunit = false
@@ -12,5 +12,14 @@ func _process(delta):
 		GameState.health = GameState.health - damage
 		get_parent().get_parent().queue_free()
 	
-	if health == 0:
+	if health <= 0:
+		speed = 0
+		$AnimatedSprite2D.play("death")
+		
+
+func _on_animated_sprite_2d_animation_finished():
+	if health > 0:
+		$AnimatedSprite2D.play("default")
+	if $AnimatedSprite2D.get_animation() == "death":
 		get_parent().get_parent().queue_free()
+	

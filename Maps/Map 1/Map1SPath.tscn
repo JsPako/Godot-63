@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4soc80s0x7il"]
+[gd_scene load_steps=4 format=3 uid="uid://xdpoyiur2a3p"]
 
-[ext_resource type="PackedScene" uid="uid://crfd5nm44scuh" path="res://Enemy/groundBasic.tscn" id="1_e6qi8"]
+[ext_resource type="Script" path="res://Maps/Map 1/Map1Flip.gd" id="1_fpn2b"]
+[ext_resource type="PackedScene" uid="uid://hox88el24jpg" path="res://Enemy/groundSpeedy.tscn" id="2_gy65i"]
 
 [sub_resource type="Curve2D" id="Curve2D_jq331"]
 _data = {
@@ -14,5 +15,7 @@ curve = SubResource("Curve2D_jq331")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-690, 96)
+script = ExtResource("1_fpn2b")
 
-[node name="groundBasic" parent="PathFollow2D" instance=ExtResource("1_e6qi8")]
+[node name="groundSpeedy" parent="PathFollow2D" instance=ExtResource("2_gy65i")]
+health = 0.0

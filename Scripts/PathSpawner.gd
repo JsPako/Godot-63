@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var path = preload("res://Maps/Map 1/Map1Stage.tscn")
+@onready var basicPath = preload("res://Maps/Map 1/Map1BPath.tscn")
+@onready var speedyPath = preload("res://Maps/Map 1/Map1SPath.tscn")
 
 func _ready():
 	GameState.stage = 0
@@ -31,10 +32,11 @@ func waveStart():
 	var stage = GameState.stage
 
 	if stage == 1:
-		await spawnEnemy(path, 10, 1)
+		await spawnEnemy(basicPath, 10, 1)
+		await spawnEnemy(speedyPath, 3, 2)
 	if stage == 2:
-		await spawnEnemy(path, 300, 0.1)
-		await spawnEnemy(path, 50, 0.5)
+		await spawnEnemy(basicPath, 300, 0.1)
+		await spawnEnemy(speedyPath, 50, 0.5)
 	GameState.waveOngoing = false
 
 func spawnEnemy(_path, _amount, _gap):
