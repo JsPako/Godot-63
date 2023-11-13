@@ -75,10 +75,10 @@ script = ExtResource("1_5r01w")
 shape = SubResource("CircleShape2D_fym4x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_rl3qw")
+animation = &"death"
 autoplay = "default"
-frame = 3
-frame_progress = 1.0
+frame = 2
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

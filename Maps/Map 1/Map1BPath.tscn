@@ -18,4 +18,3 @@ position = Vector2(-690, 96)
 script = ExtResource("1_p2f1w")
 
 [node name="groundBasic" parent="PathFollow2D" instance=ExtResource("2_ulkse")]
-health = 0
