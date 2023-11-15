@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/GameUI/ReturnBtn.gd" id="9_20pwo"]
 [ext_resource type="Script" path="res://Scripts/GameUI/AudioPercent.gd" id="9_bhpuy"]
 [ext_resource type="Script" path="res://Scripts/GameUI/RestartBtn.gd" id="9_y3pcd"]
-[ext_resource type="Script" path="res://HomeBtn.gd" id="10_f6iti"]
+[ext_resource type="Script" path="res://Scripts/GameUI/HomeBtn.gd" id="10_f6iti"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2dj8a"]
 font = ExtResource("2_l373e")

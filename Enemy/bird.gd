@@ -1,10 +1,8 @@
 extends CharacterBody2D
 
-var speed = 120
-var damage = 1
-var health = 45
-var airunit = false
-var armor = 0
+var speed = 200
+var damage = 12
+var health = 5
 
 func _process(delta):
 	get_parent().set_progress(get_parent().get_progress() + speed * delta)

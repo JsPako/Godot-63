@@ -1,0 +1,107 @@
+[gd_scene load_steps=15 format=3 uid="uid://kgiav77hnxv"]
+
+[ext_resource type="Script" path="res://Enemy/rottweiler.gd" id="1_c6gf0"]
+[ext_resource type="Texture2D" uid="uid://dam6bo2l3yqm2" path="res://Assets/enemies/MiniRottweiler.png" id="2_58tkh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmxdu"]
+radius = 26.0192
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p6n7"]
+atlas = ExtResource("2_58tkh")
+region = Rect2(0, 245, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edw3g"]
+atlas = ExtResource("2_58tkh")
+region = Rect2(32, 245, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsuft"]
+atlas = ExtResource("2_58tkh")
+region = Rect2(64, 245, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbo3f"]
+atlas = ExtResource("2_58tkh")
+region = Rect2(96, 245, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vfhg"]
+atlas = ExtResource("2_58tkh")
+region = Rect2(0, 49, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_impvl"]
+atlas = ExtResource("2_58tkh")
+region = Rect2(32, 49, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjbo3"]
+atlas = ExtResource("2_58tkh")
+region = Rect2(64, 49, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddbso"]
+atlas = ExtResource("2_58tkh")
+region = Rect2(96, 49, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g17w8"]
+atlas = ExtResource("2_58tkh")
+region = Rect2(128, 49, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ogq"]
+atlas = ExtResource("2_58tkh")
+region = Rect2(160, 49, 32, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yrx8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p6n7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edw3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsuft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbo3f")
+}],
+"loop": false,
+"name": &"death",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vfhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_impvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjbo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddbso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g17w8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ogq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="rottweiler" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_c6gf0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mmxdu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_yrx8f")
+animation = &"death"
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

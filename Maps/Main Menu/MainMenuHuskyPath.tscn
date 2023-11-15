@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://323lj78yy46r"]
 
-[ext_resource type="PackedScene" uid="uid://crfd5nm44scuh" path="res://Enemy/groundBasic.tscn" id="1_6of7m"]
+[ext_resource type="PackedScene" uid="uid://crfd5nm44scuh" path="res://Enemy/husky.tscn" id="1_6of7m"]
 
 [sub_resource type="Curve2D" id="Curve2D_3djtj"]
 _data = {

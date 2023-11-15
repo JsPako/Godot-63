@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=3 uid="uid://ohq0hqi8wafw"]
+
+[ext_resource type="Script" path="res://Enemy/goldenRetriever.gd" id="1_5qoue"]
+[ext_resource type="Texture2D" uid="uid://cu5dq3lryb0ot" path="res://Assets/enemies/MiniGoldenRetriever.png" id="2_oh1ue"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmxdu"]
+radius = 30.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07vxn"]
+atlas = ExtResource("2_oh1ue")
+region = Rect2(0, 245, 32, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vfh8"]
+atlas = ExtResource("2_oh1ue")
+region = Rect2(32, 245, 32, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs2r4"]
+atlas = ExtResource("2_oh1ue")
+region = Rect2(64, 245, 32, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqjvy"]
+atlas = ExtResource("2_oh1ue")
+region = Rect2(96, 245, 32, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2coq"]
+atlas = ExtResource("2_oh1ue")
+region = Rect2(0, 50, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mqw0"]
+atlas = ExtResource("2_oh1ue")
+region = Rect2(32, 50, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxmiy"]
+atlas = ExtResource("2_oh1ue")
+region = Rect2(64, 50, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i5n0"]
+atlas = ExtResource("2_oh1ue")
+region = Rect2(96, 50, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ert76"]
+atlas = ExtResource("2_oh1ue")
+region = Rect2(128, 50, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v87bj"]
+atlas = ExtResource("2_oh1ue")
+region = Rect2(160, 50, 32, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yrx8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07vxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vfh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs2r4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqjvy")
+}],
+"loop": false,
+"name": &"death",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2coq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mqw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxmiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7i5n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ert76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v87bj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="goldenRetriever" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_5qoue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mmxdu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.3, 2.3)
+sprite_frames = SubResource("SpriteFrames_yrx8f")
+animation = &"death"
+autoplay = "default"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

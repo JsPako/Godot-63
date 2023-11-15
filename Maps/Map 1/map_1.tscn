@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://djjtcak0i8u58"]
+[gd_scene load_steps=16 format=3 uid="uid://djjtcak0i8u58"]
 
 [ext_resource type="PackedScene" uid="uid://vw4h43kegmns" path="res://GameUI.tscn" id="1_2a5oq"]
 [ext_resource type="TileSet" uid="uid://bnsenxa7w1ydr" path="res://Assets/FullTileset.tres" id="1_deq0m"]
 [ext_resource type="Texture2D" uid="uid://dy258d40iv5rh" path="res://Assets/taiga/taiga_ [resources].png" id="3_1eov8"]
 [ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="3_1khwc"]
+[ext_resource type="Texture2D" uid="uid://c6qj5auco1bb3" path="res://Assets/ui/IconsShadow-32.png" id="4_qdkcs"]
+[ext_resource type="Script" path="res://Maps/Direction.gd" id="5_fg7ge"]
+[ext_resource type="PackedScene" uid="uid://560ybjasrnu0" path="res://Towers/sword_cat.tscn" id="6_080yi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5qoed"]
 atlas = ExtResource("3_1eov8")
@@ -41,6 +44,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rbyb"]
+atlas = ExtResource("4_qdkcs")
+region = Rect2(224, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxpd5"]
+atlas = ExtResource("4_qdkcs")
+region = Rect2(226, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eeun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rbyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxpd5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
 [node name="Map 1" type="Node2D"]
 process_mode = 1
 
@@ -72,12 +97,41 @@ format = 2
 layer_0/z_index = 2
 layer_0/tile_data = PackedInt32Array(65522, 131079, 6, 65523, 196615, 6, 65524, 262151, 6, 65528, 131079, 6, 65529, 196615, 6, 65530, 196615, 6, 65531, 196615, 6, 65532, 196615, 6, 65533, 524295, 9, -14, 131079, 5, -13, 196615, 5, -12, 262151, 5, -8, 131079, 5, -7, 196615, 5, -6, 196615, 5, -5, 196615, 5, -4, 196615, 5, -3, 524295, 8, -65539, 524295, 7, -65538, 589831, 7, -2, 589831, 8, -65537, 589831, 7, -1, 589831, 8, -131072, 655367, 7, -65536, 655367, 8, 0, 655367, 9, -65535, 262151, 5, 1, 262151, 6, -196595, 196610, 1, -131059, 196610, 2, 65548, 196610, 1, 131084, 196610, 2, -65525, 196610, 1, 11, 196610, 2, 393229, 196610, 1, 458765, 196610, 2, 327691, 196610, 1, 393227, 196610, 2, 196621, 196610, 1, 262157, 196610, 2, -327670, 196610, 1, -262134, 196610, 2, -327667, 65538, 1, -262131, 65538, 2, -196597, 65538, 1, -131061, 65538, 2, 196619, 65538, 1, 262155, 65538, 2, 393226, 65538, 1, 458762, 65538, 2, -393212, 65538, 1, -327676, 65538, 2, -327679, 196610, 1, -262143, 196610, 2, -262149, 196610, 1, -196613, 196610, 2, -131085, 196610, 1, -65549, 196610, 2, -196617, 65538, 1, -131081, 65538, 2, -65544, 65538, 3, -327680, 65538, 3, 65546, 65538, 3, 13, 65538, 3, -262133, 65538, 3, 458759, 65538, 3, 196614, 131074, 3, 262150, 131074, 4, 196615, 196610, 3, 262151, 196610, 4, 327674, 262146, 3, 5, 262146, 4, 458739, 262146, 3, 262132, 262146, 4, 262149, 327682, 4, 196620, 589826, 1, -131062, 655362, 1, 393228, 655362, 2, -262142, 655362, 2, -65548, 589826, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Details Map"]
+[node name="Campfire" type="AnimatedSprite2D" parent="Details Map"]
 position = Vector2(16, 20)
 sprite_frames = SubResource("SpriteFrames_j60sv")
 animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.623171
+
+[node name="DirectionStart" type="AnimatedSprite2D" parent="Details Map"]
+modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(-206, 31.667)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_1eeun")
+autoplay = "default"
+frame_progress = 0.141731
+script = ExtResource("5_fg7ge")
+
+[node name="DirectionEnd" type="AnimatedSprite2D" parent="Details Map"]
+modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(-159.667, 112)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_1eeun")
+autoplay = "default"
+frame_progress = 0.0995869
+script = ExtResource("5_fg7ge")
+
+[node name="Towers" type="Node2D" parent="."]
+z_index = 7
+position = Vector2(75, -36)
+
+[node name="SwordCat2" parent="Towers" instance=ExtResource("6_080yi")]
+position = Vector2(-311, 173)
+
+[node name="SwordCat" parent="Towers" instance=ExtResource("6_080yi")]
+position = Vector2(294, -2)
 
 [node name="GameUI" parent="." instance=ExtResource("1_2a5oq")]
 z_index = 99

@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://c8q3v8iit14wg"]
+
+[ext_resource type="Script" path="res://Enemy/bear.gd" id="1_bk6di"]
+[ext_resource type="Texture2D" uid="uid://nr4t21y8fw4e" path="res://Assets/enemies/MiniBear.png" id="2_bsmox"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dd8js"]
+radius = 81.0247
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7msvu"]
+atlas = ExtResource("2_bsmox")
+region = Rect2(0, 243, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl7hj"]
+atlas = ExtResource("2_bsmox")
+region = Rect2(32, 243, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q75m5"]
+atlas = ExtResource("2_bsmox")
+region = Rect2(64, 243, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqy0x"]
+atlas = ExtResource("2_bsmox")
+region = Rect2(96, 243, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa3xs"]
+atlas = ExtResource("2_bsmox")
+region = Rect2(0, 50, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjc54"]
+atlas = ExtResource("2_bsmox")
+region = Rect2(32, 50, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x76y"]
+atlas = ExtResource("2_bsmox")
+region = Rect2(64, 50, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmth5"]
+atlas = ExtResource("2_bsmox")
+region = Rect2(96, 50, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3edc"]
+atlas = ExtResource("2_bsmox")
+region = Rect2(128, 50, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkpuw"]
+atlas = ExtResource("2_bsmox")
+region = Rect2(160, 50, 32, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2oaa7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7msvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl7hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q75m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqy0x")
+}],
+"loop": false,
+"name": &"death",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa3xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjc54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x76y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmth5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3edc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkpuw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="bear" type="CharacterBody2D"]
+script = ExtResource("1_bk6di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dd8js")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_2oaa7")
+animation = &"death"
+autoplay = "default"

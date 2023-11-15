@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cekd4h854csao"]
+
+[ext_resource type="PackedScene" uid="uid://cojq4feswkxsh" path="res://Enemy/fox.tscn" id="1_cpqdr"]
+
+[sub_resource type="Curve2D" id="Curve2D_3djtj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -700, -145, 0, 0, 0, 0, -433, -145, 0, 0, 0, 0, -433, 48, 0, 0, 0, 0, -242, 48, 0, 0, 0, 0, -242, -98, 0, 0, 0, 0, -145, -98, 0, 0, 0, 0, -145, 97, 0, 0, 0, 0, 47, 97, 0, 0, 0, 0, 47, -234, 0, 0, 0, 0, 526, -234, 0, 0, 0, 0, 526, 410)
+}
+point_count = 11
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_3djtj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-700, -145)
+
+[node name="fox" parent="PathFollow2D" instance=ExtResource("1_cpqdr")]
